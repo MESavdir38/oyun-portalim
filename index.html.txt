@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Oyun Cenneti</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #222; color: white; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 50px; }
+        .card { background: #333; padding: 20px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .card:hover { background: #555; transform: scale(1.05); }
+        h1 { margin-top: 50px; color: #00ff88; }
+    </style>
+</head>
+<body>
+    <h1>🎮 15 Mini Oyun Portalı</h1>
+    <div class="grid" id="gameGrid">
+        </div>
+
+    <script>
+        const games = ["Yılan Oyunu", "Hafıza Kartları", "Tetris", "2048", "Tic-Tac-Toe", "Flappy Bird", "Kelime Tahmini", "Hız Testi", "Labirent", "Ping Pong", "Mayın Tarlası", "Sayı Tahmini", "Dino Run", "Tuğla Kırma", "Uzay Savaşları"];
+        const grid = document.getElementById('gameGrid');
+
+        games.forEach((game, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `<h3>${game}</h3><p>Oynamak için tıkla!</p>`;
+            card.onclick = () => window.location.href = `games/game${index+1}.html`;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
