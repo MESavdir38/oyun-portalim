@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Oyun Portalım</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>🎮 Oyun Portalım</h1>
+
+<input type="text" id="search" placeholder="Oyun ara..." onkeyup="searchGame()">
+
+<div class="game-list" id="gameList">
+  <a href="games/game1.html">🔥 Ateş ve Su</a>
+  <a href="games/game2.html">🚗 Araba Yarışı</a>
+  <a href="games/game3.html">🧠 Zeka Oyunu</a>
+</div>
+
+<script>
+function searchGame() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let games = document.querySelectorAll("#gameList a");
+
+  games.forEach(game => {
+    game.style.display =
+      game.innerText.toLowerCase().includes(input)
+      ? "block"
+      : "none";
+  });
+}
+</script>
+
+</body>
+</html>
