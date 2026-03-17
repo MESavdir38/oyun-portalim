@@ -1,10 +1,14 @@
 body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
   padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
 }
 
 #search {
